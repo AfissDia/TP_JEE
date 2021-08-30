@@ -9,6 +9,11 @@
 			<li class="nav-item">
 				<a class="nav-link" href="saisie.do">Saisie</a>
 			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="categories">Catégories</a> </li>
+			<li class="nav-item">
+				<a class="nav-link" href="saisieCategorie">Saisie Catégorie</a>
+			</li>
 		</ul>
 	</div> 
 </nav>

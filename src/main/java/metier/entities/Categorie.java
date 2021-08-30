@@ -12,17 +12,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity
+@Entity 
 
 public class Categorie implements Serializable {
 	
 	@Id
 	@GeneratedValue (strategy=GenerationType.IDENTITY)
-	private Long IdCat;
-	private String NomCat;
+	private Long idCat;
+	private String nomCat;
 	
 	@Temporal(TemporalType.DATE)
-	private Date DateCat;
+	private Date dateCreation;
 	
 	//@OneToMany (mappedBy="categorie")
 	@OneToMany (mappedBy="categorie")
@@ -31,32 +31,33 @@ public class Categorie implements Serializable {
 	public Categorie() {
 		super();
 	}
-	public Categorie(String NomCat,Date DateCat) {
+	public Categorie(String nomCat,Date dateCreation) {
 		super();
-		this.NomCat=NomCat;
-		this.DateCat=DateCat;
+		this.nomCat=nomCat;
+		this.dateCreation=dateCreation;
 	}
+
 	public Long getIdCat() {
-		return IdCat;
+		return idCat;
 	}
 	public void setIdCat(Long idCat) {
-		IdCat = idCat;
+		this.idCat = idCat;
 	}
 	public String getNomCat() {
-		return NomCat;
+		return nomCat;
 	}
 	public void setNomCat(String nomCat) {
-		NomCat = nomCat;
+		this.nomCat = nomCat;
 	}
-	public Date getDateCat() {
-		return DateCat;
+	public Date getDateCreation() {
+		return dateCreation;
 	}
-	public void setDateCat(Date dateCat) {
-		DateCat = dateCat;
+	public void setDateCreation(Date dateCreation) {
+		this.dateCreation = dateCreation;
 	}
-	public List<Produit> getProduit() {
+	public List<Produit> getProduit() { 
 		return produit;
-	}
+	}  
 	public void setProduit(List<Produit> produit) {
 		this.produit = produit;
 	}

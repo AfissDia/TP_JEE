@@ -33,13 +33,14 @@ protected void doGet(HttpServletRequest request,HttpServletResponse response)thr
 	String path=request.getServletPath();
 	System.out.println("PATH "+path);
 	
-if (path.equals("/categorie")){
+if (path.equals("/categories")){
 	CategorieModel model= new CategorieModel();
 	List<Categorie> cats = metier.getAllCategorie();
 	model.setCategories(cats);
 	request.setAttribute("model", model);
 	request.getRequestDispatcher("categories.jsp").forward(request,response);
 }
+
 else if (path.equals("/saisieCategorie") ){
 	request.getRequestDispatcher("saisieCategorie.jsp").forward(request,response);
 }
@@ -47,6 +48,7 @@ else if (path.equals("/saveCategorie") && request.getMethod().equals("POST"))
 {
 Date dateCat= new Date();
 // a revoir
+
 	String nom=request.getParameter("nomCat");
 	String pattern = "yyyy-MM-dd";
 	SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -91,7 +93,7 @@ else if (path.equals("/updateCat") ){
 	}
 	// a revoir
 	
-	cat.setDateCat(dateCat);
+	cat.setDateCreation(dateCat);
 	metier.updateCategorie(cat);
 	response.sendRedirect("categories");
 	}
