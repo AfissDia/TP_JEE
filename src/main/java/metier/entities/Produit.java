@@ -24,12 +24,12 @@ public class Produit implements Serializable{
 	
 	@ManyToOne
 	private Categorie categorie;
-	public Produit(String nomProduit, double prix,Long catId) {
+	public Produit(String nomProduit, double prix,Categorie cat) {
 		super();
 		this.nomProduit = nomProduit;
 		this.prix = prix;
-		Categorie cat = new Categorie();
-		cat.setIdCat(catId);
+		//Categorie cat = new Categorie();
+		//cat.setIdCat(catId);
 		this.setCategorie(cat);
 		}
 	
